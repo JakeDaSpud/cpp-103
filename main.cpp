@@ -10,6 +10,7 @@ int add(int,int);
 void swap_by_value(int,int);
 void swap_by_reference(int&,int&) ;
 int multiply(const int &, const int &);
+void grow(double& height);
 
 int main() {
     cout << "sam103 - Functions - pass-by-value v. pass-by-reference" << endl;
@@ -43,6 +44,12 @@ int main() {
 
     int product = multiply( x, y );
     cout << "X multiplied by Y = " << product << endl;
+
+    double height = 1.86;
+    cout << "Height = " << height << endl;
+
+    grow(height);
+    cout << "Height after grow() = " << height << endl;
 
     return 0;
 }
@@ -96,9 +103,13 @@ int multiply( const int & a, const int & b ) {      // reference parameters
 
 // We will see later that reference parameters are usually more efficient than pass-by-value.
 
-//TODO
+//TODOne
 // In main(), declare a variable "double height = 1.86;"
 // Call a method named grow(height);
 // Write the grow() method to use a reference parameter that will increase the value in the
 // variable height value by 50%  (so, multiply by 1.5 ).
 // The grow() function will not return a value. (return type will be void).
+
+void grow(double& height) {
+    height = height * 1.5;
+}
